@@ -1,0 +1,24 @@
+filters:
+  and:
+    - file.ext == "md"
+    - file.path != "index.md"
+properties:
+  title:
+    displayName: Page
+  status:
+    displayName: Status
+  reviewed:
+    displayName: Reviewed
+  tags:
+    displayName: Tags
+views:
+  - type: table
+    name: OKF Pages
+    order:
+      - title
+      - status
+      - reviewed
+      - tags
+    sort:
+      - property: title
+        direction: ASC

@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://pwright.github.io/blockscape/documentation/query/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Query reference - Blockscape</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../../site_assets/blockscape/blockscape.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Blockscape</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="https://pwright.github.io/blockscape/" class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../tipping/" class="nav-link">Hello</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Maps</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../maps/blockscape-example/" class="dropdown-item">Blockscape Example</a>
+</li>
+                                    
+<li>
+    <a href="../../maps/wardley-example/" class="dropdown-item">Wardley Example</a>
+</li>
+                                    
+<li>
+    <a href="../../maps/series-example/" class="dropdown-item">Series Example</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Documentation</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../maps/" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="../features/" class="dropdown-item">Features</a>
+</li>
+                                    
+<li>
+    <a href="../series/" class="dropdown-item">Series</a>
+</li>
+                                    
+<li>
+    <a href="../models/" class="dropdown-item">Models</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Query reference</a>
+</li>
+                                    
+<li>
+    <a href="../build-patterns/" class="dropdown-item">Build patterns</a>
+</li>
+                                    
+<li>
+    <a href="../llm-generation/" class="dropdown-item">LLM generation</a>
+</li>
+                                    
+<li>
+    <a href="../evolution/" class="dropdown-item">Evolution</a>
+</li>
+                                    
+<li>
+    <a href="../gestalt/" class="dropdown-item">Gestalt</a>
+</li>
+                                    
+<li>
+    <a href="../gists/" class="dropdown-item">Gists</a>
+</li>
+                                    
+<li>
+    <a href="../icons/" class="dropdown-item">Icons</a>
+</li>
+                                    
+<li>
+    <a href="../llm-consume/" class="dropdown-item">LLM consume</a>
+</li>
+                                    
+<li>
+    <a href="../rise-and-fall-json/" class="dropdown-item">JSON prompting</a>
+</li>
+                                    
+<li>
+    <a href="../navigation/" class="dropdown-item">Navigation</a>
+</li>
+                                    
+<li>
+    <a href="../paste/" class="dropdown-item">Paste</a>
+</li>
+                                    
+<li>
+    <a href="../portfolio/" class="dropdown-item">Portfolio</a>
+</li>
+                                    
+<li>
+    <a href="../relational-awareness/" class="dropdown-item">Relational awareness</a>
+</li>
+                                    
+<li>
+    <a href="../share-links/" class="dropdown-item">Share links</a>
+</li>
+                                    
+<li>
+    <a href="../stages/" class="dropdown-item">Stages</a>
+</li>
+                                    
+<li>
+    <a href="../value-chain/" class="dropdown-item">Value chain</a>
+</li>
+                                    
+<li>
+    <a href="../watch-models/" class="dropdown-item">Watch models</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Integrations</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../mkdocs/" class="dropdown-item">MkDocs usage</a>
+</li>
+                                    
+<li>
+    <a href="../apicurio/" class="dropdown-item">Apicurio as backend</a>
+</li>
+                                    
+<li>
+    <a href="../docker/" class="dropdown-item">Docker for local editor</a>
+</li>
+                                    
+<li>
+    <a href="../bs-opener-linux/" class="dropdown-item">Local usage on Linux</a>
+</li>
+                                    
+<li>
+    <a href="../bs-opener-mac/" class="dropdown-item">Local usage on Mac</a>
+</li>
+                                    
+<li>
+    <a href="../server/" class="dropdown-item">Local backend server</a>
+</li>
+                                    
+<li>
+    <a href="../../neutralino-app/" class="dropdown-item">Desktop app (Linux and macos)</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../toc/" class="nav-link">TOC</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../models/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../build-patterns/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#query-reference" class="nav-link">Query Reference</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#what-queries-return" class="nav-link">What Queries Return</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#basic-examples" class="nav-link">Basic Examples</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#looking-up-specific-things" class="nav-link">Looking Up Specific Things</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#dependency-queries" class="nav-link">Dependency Queries</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#category-queries" class="nav-link">Category Queries</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#subgraph-queries" class="nav-link">Subgraph Queries</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#filtering-and-analysis-examples" class="nav-link">Filtering And Analysis Examples</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#transform-examples" class="nav-link">Transform Examples</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#series-metadata-examples" class="nav-link">Series Metadata Examples</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#small-utility-patterns" class="nav-link">Small Utility Patterns</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#common-mistakes" class="nav-link">Common Mistakes</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#restrictions" class="nav-link">Restrictions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="query-reference">Query Reference</h1>
+<p>Blockscape includes a browser-side SCI query panel for inspecting and transforming the active map with small Clojure expressions.</p>
+<p>The query tab binds:</p>
+<ul>
+<li><code>map</code>: the active Blockscape model as data</li>
+<li><code>model</code>: the same active model, exposed under a non-shadowing name</li>
+<li><code>global</code>: the read-only normalized in-memory registry of loaded maps and items</li>
+<li><code>series</code>: read-only metadata for the active series, when present</li>
+</ul>
+<p>Use <code>model</code> in most examples. <code>map</code> is still available for compatibility, but it shadows the standard Clojure <code>map</code> function in query expressions.</p>
+<p>Built-in helpers:</p>
+<ul>
+<li><code>list-items</code></li>
+<li><code>get-item</code></li>
+<li><code>find-dependents</code></li>
+<li><code>filter-category</code></li>
+<li><code>extract-subgraph</code></li>
+</ul>
+<p><code>global</code> has this shape:</p>
+<pre><code class="language-clojure">{:items {item-id {:id ... :name ... :deps [...] ...}}
+ :maps  {global-map-id
+         {:id global-map-id
+          :modelId &quot;original-bs-id&quot;
+          :title &quot;Map title&quot;
+          :categories [{:id ... :title ... :itemIds [...]}]}}}
+</code></pre>
+<h2 id="what-queries-return">What Queries Return</h2>
+<p>Queries can return any normal result:</p>
+<ul>
+<li>a scalar like a string, number, or boolean</li>
+<li>a single item map</li>
+<li>a list/vector of items</li>
+<li>a full Blockscape model</li>
+</ul>
+<p>Only full valid models can be applied back to the active map.</p>
+<h2 id="basic-examples">Basic Examples</h2>
+<p>List every item in the current map:</p>
+<pre><code class="language-clojure">(list-items model)
+</code></pre>
+<p>Count all items:</p>
+<pre><code class="language-clojure">(count (list-items model))
+</code></pre>
+<p>List all item IDs:</p>
+<pre><code class="language-clojure">(map :id (list-items model))
+</code></pre>
+<p>List all item names:</p>
+<pre><code class="language-clojure">(map :name (list-items model))
+</code></pre>
+<p>Return the model title:</p>
+<pre><code class="language-clojure">(:title model)
+</code></pre>
+<p>Return all category IDs:</p>
+<pre><code class="language-clojure">(map :id (:categories model))
+</code></pre>
+<p>Count categories:</p>
+<pre><code class="language-clojure">(count (:categories model))
+</code></pre>
+<p>Count all loaded maps in memory:</p>
+<pre><code class="language-clojure">(count (keys (:maps global)))
+</code></pre>
+<p>List loaded map titles:</p>
+<pre><code class="language-clojure">(map :title (vals (:maps global)))
+</code></pre>
+<p>List all globally known item IDs:</p>
+<pre><code class="language-clojure">(sort (keys (:items global)))
+</code></pre>
+<h2 id="looking-up-specific-things">Looking Up Specific Things</h2>
+<p>Get one item by ID:</p>
+<pre><code class="language-clojure">(get-item model &quot;api&quot;)
+</code></pre>
+<p>Return just the name of one item:</p>
+<pre><code class="language-clojure">(:name (get-item model &quot;api&quot;))
+</code></pre>
+<p>Check whether an item exists:</p>
+<pre><code class="language-clojure">(some? (get-item model &quot;api&quot;))
+</code></pre>
+<p>Show an item's dependencies:</p>
+<pre><code class="language-clojure">(:deps (get-item model &quot;frontend&quot;))
+</code></pre>
+<p>Show an item's stage:</p>
+<pre><code class="language-clojure">(:stage (get-item model &quot;frontend&quot;))
+</code></pre>
+<p>Show an item's external link:</p>
+<pre><code class="language-clojure">(:external (get-item model &quot;frontend&quot;))
+</code></pre>
+<h2 id="dependency-queries">Dependency Queries</h2>
+<p>Find direct dependents of an item:</p>
+<pre><code class="language-clojure">(find-dependents model &quot;db&quot;)
+</code></pre>
+<p>Count direct dependents:</p>
+<pre><code class="language-clojure">(count (find-dependents model &quot;db&quot;))
+</code></pre>
+<p>Return only dependent item IDs:</p>
+<pre><code class="language-clojure">(map :id (find-dependents model &quot;db&quot;))
+</code></pre>
+<p>Sort dependent IDs alphabetically:</p>
+<pre><code class="language-clojure">(sort (map :id (find-dependents model &quot;db&quot;)))
+</code></pre>
+<p>Find items with at least one dependency:</p>
+<pre><code class="language-clojure">(filter #(seq (:deps %)) (list-items model))
+</code></pre>
+<p>Find items with no dependencies:</p>
+<pre><code class="language-clojure">(filter #(empty? (or (:deps %) [])) (list-items model))
+</code></pre>
+<p>Count items with no dependencies:</p>
+<pre><code class="language-clojure">(count
+ (filter #(empty? (or (:deps %) []))
+         (list-items model)))
+</code></pre>
+<p>Find items that depend on either <code>db</code> or <code>cache</code>:</p>
+<pre><code class="language-clojure">(filter
+ #(some #{&quot;db&quot; &quot;cache&quot;} (or (:deps %) []))
+ (list-items model))
+</code></pre>
+<h2 id="category-queries">Category Queries</h2>
+<p>Return a single category:</p>
+<pre><code class="language-clojure">(first
+ (filter #(= (:id %) &quot;experience&quot;)
+         (:categories model)))
+</code></pre>
+<p>Return all items in one category:</p>
+<pre><code class="language-clojure">(:items
+ (first
+ (filter #(= (:id %) &quot;experience&quot;)
+          (:categories model))))
+</code></pre>
+<p>Return item counts per category:</p>
+<pre><code class="language-clojure">(map
+ (fn [category]
+   {:category (:id category)
+    :count (count (:items category))})
+ (:categories model))
+</code></pre>
+<p>Return only categories that contain items:</p>
+<pre><code class="language-clojure">(filter #(seq (:items %)) (:categories model))
+</code></pre>
+<p>Filter the active map down to one category:</p>
+<pre><code class="language-clojure">(filter-category model &quot;experience&quot;)
+</code></pre>
+<p>That returns a full model and can usually be applied.</p>
+<h2 id="subgraph-queries">Subgraph Queries</h2>
+<p>Extract the subgraph around one item:</p>
+<pre><code class="language-clojure">(extract-subgraph model &quot;api&quot;)
+</code></pre>
+<p>Extract a subgraph, then list the surviving item IDs:</p>
+<pre><code class="language-clojure">(map :id
+     (list-items
+      (extract-subgraph model &quot;api&quot;)))
+</code></pre>
+<p>Count items in a subgraph:</p>
+<pre><code class="language-clojure">(count
+ (list-items
+  (extract-subgraph model &quot;api&quot;)))
+</code></pre>
+<p>See which categories remain after extraction:</p>
+<pre><code class="language-clojure">(map :id
+     (:categories
+      (extract-subgraph model &quot;api&quot;)))
+</code></pre>
+<h2 id="filtering-and-analysis-examples">Filtering And Analysis Examples</h2>
+<p>Find items in stage 1:</p>
+<pre><code class="language-clojure">(filter #(= 1 (:stage %)) (list-items model))
+</code></pre>
+<p>Find items in stage 4:</p>
+<pre><code class="language-clojure">(filter #(= 4 (:stage %)) (list-items model))
+</code></pre>
+<p>Count staged items:</p>
+<pre><code class="language-clojure">(count
+ (filter :stage (list-items model)))
+</code></pre>
+<p>Find items that have logos:</p>
+<pre><code class="language-clojure">(filter :logo (list-items model))
+</code></pre>
+<p>Find items that have external links:</p>
+<pre><code class="language-clojure">(filter :external (list-items model))
+</code></pre>
+<p>Return only item summaries:</p>
+<pre><code class="language-clojure">(map
+ (fn [item]
+   {:id (:id item)
+    :name (:name item)
+    :deps (count (or (:deps item) []))})
+ (list-items model))
+</code></pre>
+<p>Sort items by dependency count:</p>
+<pre><code class="language-clojure">(sort-by #(count (or (:deps %) []))
+         (list-items model))
+</code></pre>
+<p>Sort descending by dependency count:</p>
+<pre><code class="language-clojure">(reverse
+ (sort-by #(count (or (:deps %) []))
+          (list-items model)))
+</code></pre>
+<p>Find the first item with the most dependencies:</p>
+<pre><code class="language-clojure">(last
+ (sort-by #(count (or (:deps %) []))
+          (list-items model)))
+</code></pre>
+<p>Group item IDs by stage:</p>
+<pre><code class="language-clojure">(reduce
+ (fn [acc item]
+   (update acc
+           (or (:stage item) :none)
+           (fnil conj [])
+           (:id item)))
+ {}
+ (list-items model))
+</code></pre>
+<h2 id="transform-examples">Transform Examples</h2>
+<p>These examples return full model objects. If the result still satisfies the Blockscape schema, the Query tab will allow you to apply it.</p>
+<p>Keep only one category:</p>
+<pre><code class="language-clojure">(filter-category model &quot;experience&quot;)
+</code></pre>
+<p>Replace the model title:</p>
+<pre><code class="language-clojure">(assoc model :title &quot;Filtered view&quot;)
+</code></pre>
+<p>Add or replace the abstract:</p>
+<pre><code class="language-clojure">(assoc model :abstract &quot;&lt;p&gt;Generated from Query mode.&lt;/p&gt;&quot;)
+</code></pre>
+<p>Remove the background image:</p>
+<pre><code class="language-clojure">(dissoc model :backgroundUrl)
+</code></pre>
+<p>Keep only categories that contain items:</p>
+<pre><code class="language-clojure">(update model :categories
+        (fn [categories]
+          (vec (filter #(seq (:items %)) categories))))
+</code></pre>
+<p>Remove items with no dependencies:</p>
+<pre><code class="language-clojure">(update model :categories
+        (fn [categories]
+          (vec
+           (map
+            (fn [category]
+              (update category :items
+                      (fn [items]
+                        (vec
+                         (filter #(seq (or (:deps %) [])) items)))))
+            categories))))
+</code></pre>
+<p>Keep only items that have external links:</p>
+<pre><code class="language-clojure">(update model :categories
+        (fn [categories]
+          (-&gt;&gt; categories
+               (map
+                (fn [category]
+                  (update category :items
+                          (fn [items]
+                            (vec (filter :external items))))))
+               (filter #(seq (:items %)))
+               vec)))
+</code></pre>
+<p>Force every item into stage 2:</p>
+<pre><code class="language-clojure">(update model :categories
+        (fn [categories]
+          (vec
+           (map
+            (fn [category]
+              (update category :items
+                      (fn [items]
+                        (vec
+                         (map #(assoc % :stage 2) items)))))
+            categories))))
+</code></pre>
+<p>Create a subgraph-focused model:</p>
+<pre><code class="language-clojure">(-&gt; (extract-subgraph model &quot;api&quot;)
+    (assoc :title &quot;API Focus&quot;))
+</code></pre>
+<h2 id="series-metadata-examples">Series Metadata Examples</h2>
+<p><code>series</code> is metadata only. It is useful for inspection and display logic, but not as a writable map source.</p>
+<p>Return the series ID:</p>
+<pre><code class="language-clojure">(:seriesId series)
+</code></pre>
+<p>Return the series title:</p>
+<pre><code class="language-clojure">(:title series)
+</code></pre>
+<p>Return the number of concrete versions:</p>
+<pre><code class="language-clojure">(:versionCount series)
+</code></pre>
+<p>List version labels:</p>
+<pre><code class="language-clojure">(map :version (:versions series))
+</code></pre>
+<p>List version model IDs:</p>
+<pre><code class="language-clojure">(map :modelId (:versions series))
+</code></pre>
+<p>Return the active series index:</p>
+<pre><code class="language-clojure">(:activeVersionIndex series)
+</code></pre>
+<h2 id="small-utility-patterns">Small Utility Patterns</h2>
+<p>Use <code>-&gt;</code> to make transforms easier to read:</p>
+<pre><code class="language-clojure">(-&gt; model
+    (assoc :title &quot;Example&quot;)
+    (assoc :abstract &quot;&lt;p&gt;Updated in query mode.&lt;/p&gt;&quot;))
+</code></pre>
+<p>Use <code>-&gt;&gt;</code> for item pipelines:</p>
+<pre><code class="language-clojure">(-&gt;&gt; (list-items model)
+     (filter :external)
+     (map :id)
+     sort)
+</code></pre>
+<p>Build compact result tables:</p>
+<pre><code class="language-clojure">(-&gt;&gt; (:categories model)
+     (map (fn [category]
+            [(:id category) (count (:items category))]))
+     (into {}))
+</code></pre>
+<p>Return a boolean answer:</p>
+<pre><code class="language-clojure">(boolean (get-item model &quot;api&quot;))
+</code></pre>
+<p>Return a set of all dependency IDs used anywhere:</p>
+<pre><code class="language-clojure">(set
+ (mapcat #(or (:deps %) [])
+         (list-items model)))
+</code></pre>
+<h2 id="common-mistakes">Common Mistakes</h2>
+<p>This looks like it should map over categories, but it actually calls the bound model value as a function because <code>map</code> is also the model binding:</p>
+<pre><code class="language-clojure">(map :id (:categories map))
+</code></pre>
+<p>Use <code>model</code> instead:</p>
+<pre><code class="language-clojure">(map :id (:categories model))
+</code></pre>
+<p>This does not return a full model, so it cannot be applied:</p>
+<pre><code class="language-clojure">(list-items model)
+</code></pre>
+<p>This usually returns a valid model and can be applied:</p>
+<pre><code class="language-clojure">(assoc model :title &quot;New title&quot;)
+</code></pre>
+<p>This removes required structure and will fail validation:</p>
+<pre><code class="language-clojure">(dissoc model :categories)
+</code></pre>
+<p>This introduces broken dependency references and will fail validation:</p>
+<pre><code class="language-clojure">(assoc-in model [:categories 0 :items 0 :deps] [&quot;missing-id&quot;])
+</code></pre>
+<h2 id="restrictions">Restrictions</h2>
+<p>Query mode is intentionally constrained:</p>
+<ul>
+<li>no <code>js/</code> interop</li>
+<li>no arbitrary <code>eval</code></li>
+<li>no <code>require</code>, <code>import</code>, or <code>load-file</code></li>
+<li>no filesystem or network access</li>
+<li>no direct mutation of app internals</li>
+</ul>
+<p>Treat the query panel as a safe data transformation layer over the active Blockscape model.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../site_assets/blockscape/blockscape.js"></script>
+        <script src="../../site_assets/blockscape/mount.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

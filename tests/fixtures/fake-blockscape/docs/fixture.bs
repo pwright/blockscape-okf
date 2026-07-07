@@ -1,0 +1,15 @@
+{
+  "id": "fixture",
+  "title": "Fixture Map",
+  "abstract": "A minimal map used by the Blockscape OKF smoke test.",
+  "categories": [
+    {
+      "id": "experience",
+      "title": "Experience",
+      "items": [
+        { "id": "user", "name": "User", "deps": ["app"] },
+        { "id": "app", "name": "App", "deps": [] }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "@quartz/dist",
+  "version": "1.0.0",
+  "type": "module",
+  "exports": {
+    ".": "./index.js"
+  },
+  "quartz": {
+    "name": "Blockscape",
+    "displayName": "Blockscape",
+    "description": "Render Blockscape maps from fenced bs and blockscape code blocks.",
+    "version": "1.0.0",
+    "category": "transformer",
+    "defaultOrder": 81,
+    "defaultOptions": {
+      "defaultRenderer": "full"
+    }
+  },
+  "peerDependencies": {
+    "unified": "^11.0.0"
+  }
+}

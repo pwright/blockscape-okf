@@ -1,0 +1,33 @@
+filters:
+  and:
+    - file.ext == "md"
+    - file.path != "index.md"
+formulas:
+  days_old: "(now() - file.mtime) / (1000 * 60 * 60 * 24)"
+  age_label: 'if(formula.days_old < 1, "Today", if(formula.days_old < 7, "This week", if(formula.days_old < 30, "This month", "Older")))'
+properties:
+  title:
+    displayName: Page
+  status:
+    displayName: Status
+  reviewed:
+    displayName: Reviewed
+  file.mtime:
+    displayName: Last Modified
+  file.folder:
+    displayName: Section
+views:
+  - type: table
+    name: Recent Changes
+    limit: 30
+    filters:
+      - 'file.mtime > now() - "30 days"'
+    order:
+      - title
+      - status
+      - reviewed
+      - file.mtime
+      - file.folder
+    sort:
+      - property: file.mtime
+        direction: DESC

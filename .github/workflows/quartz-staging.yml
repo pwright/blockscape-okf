@@ -1,0 +1,76 @@
+name: Build Quartz Staging
+
+on:
+  workflow_dispatch:
+    inputs:
+      sources:
+        description: 'Additional input sources (comma-separated, e.g., "generated,reviewed")'
+        required: false
+        default: ''
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages-staging
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: quartz/package-lock.json
+
+      - name: Install Quartz dependencies
+        working-directory: quartz
+        run: npm ci
+
+      - name: Install Quartz plugins
+        working-directory: quartz
+        run: node quartz/bootstrap-cli.mjs plugin install
+
+      - name: Stage Quartz content
+        run: |
+          INPUTS="--input generated --input reviewed --input sources"
+
+          # Add additional sources if provided
+          if [ -n "${{ github.event.inputs.sources }}" ]; then
+            IFS=',' read -ra SOURCES <<< "${{ github.event.inputs.sources }}"
+            for source in "${SOURCES[@]}"; do
+              source=$(echo "$source" | xargs)  # trim whitespace
+              if [ -d "$source" ]; then
+                INPUTS="$INPUTS --input $source"
+              fi
+            done
+          fi
+
+          python3 tools/stage-quartz-content.py $INPUTS --output quartz/content --link-map linkmap.yaml
+
+      - name: Build Quartz
+        working-directory: quartz
+        run: node quartz/bootstrap-cli.mjs build
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: quartz/public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,97 @@
+@use "./variables.scss" as *;
+
+// ============================================================================
+// Academic Theme - Wide layout optimized for long-form reading
+// ============================================================================
+
+.page {
+  max-width: 100% !important;
+
+  > #quartz-body {
+    // Academic layout: wider content, minimal sidebars
+    @media all and ($desktop) {
+      grid-template-columns: 240px 1fr 300px !important;
+      max-width: 1900px;
+      margin: 0 auto;
+      column-gap: 3rem !important;
+      padding: 0 2rem;
+    }
+
+    @media all and ($tablet) {
+      column-gap: 2rem !important;
+    }
+  }
+}
+
+// Wide article content for academic reading
+article {
+  max-width: 1000px !important;
+  line-height: 1.8 !important;
+
+  // More generous paragraph spacing
+  p {
+    margin-bottom: 1.2rem;
+    line-height: 1.8;
+  }
+
+  // Better heading hierarchy
+  h1 {
+    font-size: 2.2rem !important;
+    margin-top: 2.5rem !important;
+    margin-bottom: 1.5rem !important;
+    line-height: 1.3;
+  }
+
+  h2 {
+    font-size: 1.6rem !important;
+    margin-top: 2rem !important;
+    margin-bottom: 1.2rem !important;
+    line-height: 1.4;
+  }
+
+  h3 {
+    font-size: 1.3rem !important;
+    margin-top: 1.8rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  // Better list spacing
+  ul, ol {
+    margin-bottom: 1.5rem;
+    padding-left: 2rem;
+
+    li {
+      margin-bottom: 0.5rem;
+      line-height: 1.8;
+    }
+  }
+
+  // Wider code blocks
+  pre {
+    margin: 1.5rem 0;
+  }
+
+  // Better blockquote styling
+  blockquote {
+    margin: 1.5rem 0;
+    padding: 1rem 1.5rem;
+    font-style: italic;
+    border-left: 4px solid var(--secondary);
+  }
+}
+
+// Cleaner sidebar styling
+.sidebar {
+  &.left, &.right {
+    padding-top: 4rem !important;
+  }
+}
+
+// Optional: Wider tables for academic data
+.table-container > table {
+  width: 100%;
+
+  th, td {
+    padding: 0.6rem 1rem !important;
+  }
+}

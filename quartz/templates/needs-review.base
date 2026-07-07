@@ -1,0 +1,29 @@
+filters:
+  and:
+    - file.ext == "md"
+    - file.path != "index.md"
+    - reviewed == false
+    - status != "draft"
+properties:
+  title:
+    displayName: Page
+  status:
+    displayName: Status
+  tags:
+    displayName: Tags
+  file.mtime:
+    displayName: Modified
+  file.folder:
+    displayName: Section
+views:
+  - type: table
+    name: Needs Review
+    order:
+      - title
+      - status
+      - tags
+      - file.mtime
+      - file.folder
+    sort:
+      - property: file.mtime
+        direction: DESC

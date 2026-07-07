@@ -1,0 +1,30 @@
+# Upstream snapshot; refresh with scripts/sync-human-blockscape.sh
+#/human/
+
+# Generated local outputs
+# /generated/
+/indexes/
+/maps/*.generated.*
+/context-packs/
+
+# Temporary files
+/tmp/
+.DS_Store
+
+
+# Heavy/generated upstream snapshot internals
+/human/**/node_modules/
+/human/**/docs/assets/
+/human/**/docs/data.log/
+/human/**/cypress/videos/
+/human/**/.github/
+
+# Quartz staged content and build outputs
+/quartz/content/*
+!/quartz/content/.gitkeep
+/quartz/public/
+/quartz/node_modules/
+/quartz/.quartz/plugins/
+
+# Quartz templates are tracked (not ignored)
+!/quartz/templates/

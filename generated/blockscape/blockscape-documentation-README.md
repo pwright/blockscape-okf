@@ -3,7 +3,7 @@ type: BlockscapeDocs
 title: MkDocs Blockscape Extension (Example)
 id: blockscape-documentation-README
 source_file: ../human/blockscape/documentation/README.md
-generated_at: 2026-07-07T11:08:05Z
+generated_at: 2026-07-07T11:29:03Z
 generator: copy-blockscape-markdown.sh
 tags:
   - blockscape
@@ -61,7 +61,7 @@ Open the served URL (usually http://127.0.0.1:8000/). The config in `mkdocs.yml`
 Use a fenced block with the `blockscape` language:
 
 ```md
-```blockscape
+```json
 { valid JSON }
 ```
 ```

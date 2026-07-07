@@ -3,7 +3,7 @@ type: BlockscapeDocs
 title: Using Blockscape with MkDocs
 id: blockscape-documentation-docs-documentation-mkdocs
 source_file: ../human/blockscape/documentation/docs/documentation/mkdocs.md
-generated_at: 2026-07-07T11:08:05Z
+generated_at: 2026-07-07T11:29:03Z
 generator: copy-blockscape-markdown.sh
 tags:
   - blockscape
@@ -75,7 +75,7 @@ The plugin renders the interactive Blockscape view inline with local file access
 
 Here is the same code, but with the mkdocs extension `blockscape` codefence:
 
-```blockscape
+```json
 {
   "title": "Demo map",
   "categories": [    {

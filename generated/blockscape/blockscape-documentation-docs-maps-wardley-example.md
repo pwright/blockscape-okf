@@ -3,7 +3,7 @@ type: BlockscapeDocs
 title: Wardley example
 id: blockscape-documentation-docs-maps-wardley-example
 source_file: ../human/blockscape/documentation/docs/maps/wardley-example.md
-generated_at: 2026-07-07T11:08:05Z
+generated_at: 2026-07-07T11:29:03Z
 generator: copy-blockscape-markdown.sh
 tags:
   - blockscape
@@ -13,7 +13,7 @@ tags:
 
 This is a wardley map, the only difference being that an item can be associated with a development stage, 1=genesis, 2=custom, 3=product, 4=service. See example map at [https://onlinewardleymaps.com/](https://onlinewardleymaps.com/).
 
-```blockscape
+```json
 {
   "id": "tea-shop",
   "title": "Tea Shop",

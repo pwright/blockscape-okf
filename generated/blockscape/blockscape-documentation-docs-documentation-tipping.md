@@ -3,7 +3,7 @@ type: BlockscapeDocs
 title: Why are components laid out across two axes?
 id: blockscape-documentation-docs-documentation-tipping
 source_file: ../human/blockscape/documentation/docs/documentation/tipping.md
-generated_at: 2026-07-07T11:08:05Z
+generated_at: 2026-07-07T11:29:03Z
 generator: copy-blockscape-markdown.sh
 tags:
   - blockscape
@@ -579,7 +579,7 @@ tags:
 What if we joined the two concepts together with a pinch of wardley?
 
 
-```blockscape
+```json
 {
   "id": "wardley-minimap",
   "title": "Wardley-Inspired Knowledge Schema",

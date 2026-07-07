@@ -3,7 +3,7 @@ type: BlockscapeDocs
 title: Blockscape maps
 id: blockscape-documentation-docs-documentation-maps
 source_file: ../human/blockscape/documentation/docs/documentation/maps.md
-generated_at: 2026-07-07T11:08:05Z
+generated_at: 2026-07-07T11:29:03Z
 generator: copy-blockscape-markdown.sh
 tags:
   - blockscape
@@ -13,7 +13,7 @@ tags:
 
 A map is the visual representation of a model, ie analogous to a paper map of a City. 
 
-```blockscape
+```json
 {
   "id": "blockscape-map-to-decision",
   "title": "From Seeing to Deciding",

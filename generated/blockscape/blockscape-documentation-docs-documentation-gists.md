@@ -3,7 +3,7 @@ type: BlockscapeDocs
 title: Gist-powered sharing
 id: blockscape-documentation-docs-documentation-gists
 source_file: ../human/blockscape/documentation/docs/documentation/gists.md
-generated_at: 2026-07-07T11:08:05Z
+generated_at: 2026-07-07T11:29:03Z
 generator: copy-blockscape-markdown.sh
 tags:
   - blockscape

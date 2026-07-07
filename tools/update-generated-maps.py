@@ -35,16 +35,59 @@ def edit_url(blockscape_base_url: str, raw_source_url: str) -> str:
     return blockscape_base_url.rstrip("/") + "/?load=" + raw_source_url
 
 
+def is_blockscape_map(value: object) -> bool:
+    if not isinstance(value, dict):
+        return False
+    if not isinstance(value.get("id"), str) or not value["id"].strip():
+        return False
+    if not isinstance(value.get("title"), str) or not value["title"].strip():
+        return False
+    categories = value.get("categories")
+    if not isinstance(categories, list):
+        return False
+    for category in categories:
+        if not isinstance(category, dict):
+            return False
+        if not isinstance(category.get("id"), str) or not category["id"].strip():
+            return False
+        if not isinstance(category.get("title"), str) or not category["title"].strip():
+            return False
+        items = category.get("items")
+        if not isinstance(items, list):
+            return False
+        for item in items:
+            if not isinstance(item, dict):
+                return False
+            if not isinstance(item.get("id"), str) or not item["id"].strip():
+                return False
+            if not isinstance(item.get("name"), str) or not item["name"].strip():
+                return False
+    return True
+
+
+def is_blockscape_payload(value: object) -> bool:
+    if isinstance(value, list):
+        return bool(value) and all(is_blockscape_map(item) for item in value)
+    return is_blockscape_map(value)
+
+
 def render_page(source: Path, source_base_url: str, blockscape_base_url: str) -> str:
     raw = source.read_text(encoding="utf-8").rstrip()
+    is_valid_blockscape = True
     try:
         data = json.loads(raw)
     except json.JSONDecodeError as exc:
         print(f"warning: {source} is not a single JSON document: {exc}", file=sys.stderr)
         data = None
+        is_valid_blockscape = False
+    else:
+        is_valid_blockscape = is_blockscape_payload(data)
+        if not is_valid_blockscape:
+            print(f"warning: {source} is not a valid Blockscape map payload", file=sys.stderr)
     title = page_title(source, data)
     raw_url = source_url(source_base_url, source)
     blockscape_url = edit_url(blockscape_base_url, raw_url)
+    fence = "bs full" if is_valid_blockscape else "text"
 
     return "\n".join(
         [
@@ -61,7 +104,7 @@ def render_page(source: Path, source_base_url: str, blockscape_base_url: str) ->
             "",
             f"Edit: [Blockscape]({blockscape_url})",
             "",
-            "```bs full",
+            f"```{fence}",
             raw,
             "```",
             "",

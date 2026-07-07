@@ -3,7 +3,7 @@ type: BlockscapeDocs
 title: Stages in Center view
 id: blockscape-documentation-docs-documentation-stages
 source_file: ../human/blockscape/documentation/docs/documentation/stages.md
-generated_at: 2026-07-07T11:08:05Z
+generated_at: 2026-07-07T11:29:03Z
 generator: copy-blockscape-markdown.sh
 tags:
   - blockscape

@@ -5,21 +5,6 @@
     "abstract": "Interactive mapping, editing, and navigation of value-chain landscapes powered by the Blockscape app.",
     "categories": [
       {
-        "id": "motivation",
-        "title": "Motivation",
-        "items": [
-          {
-            "id": "why-use-blockscape",
-            "name": "Why Use Blockscape",
-            "deps": ["value-chain-grid", "map-explorer", "external-linking"],
-            "external": "https://pwright.github.io/blockscape-okf/generated/concepts/why-use-blockscape"
-          },
-          { "id": "cheap-small-light", "name": "Cheap Small Light Maps", "deps": ["model-parser", "file-importer", "url-loader"] },
-          { "id": "map-not-terrain", "name": "Map Not Terrain", "deps": ["why-use-blockscape"] },
-          { "id": "machine-cross-section", "name": "Machine Cross Section", "deps": ["map-not-terrain", "relation-highlights"] }
-        ]
-      },
-      {
         "id": "experience",
         "title": "User Experience",
         "items": [

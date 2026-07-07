@@ -26,8 +26,7 @@ The `human/` directory is populated by scripts. The primary source is:
 https://github.com/pwright/blockscape.git
 ```
 
-When this repo sits beside `../blockscape`, `just init` uses that local checkout by default and avoids a network clone.
-In that layout, `sources/blockscape` is a symlink to the live sibling checkout for convenient source navigation; `human/blockscape/` remains the copied snapshot used for reproducible OKF generation.
+When this repo sits beside `../blockscape`, `just init` uses that local checkout by default and avoids a network clone. `human/blockscape/` remains the copied snapshot used for reproducible OKF generation.
 
 ## Quick Start
 

@@ -3,7 +3,7 @@ type: BlockscapeDocs
 title: Blockscape Developer Guide
 id: blockscape-developer
 source_file: ../human/blockscape/developer.md
-generated_at: 2026-07-07T11:08:05Z
+generated_at: 2026-07-07T11:29:03Z
 generator: copy-blockscape-markdown.sh
 tags:
   - blockscape

@@ -64,13 +64,68 @@ if [[ "$dry_run" == "true" ]]; then
 fi
 
 mkdir -p "$output_dir"
-find "$output_dir" -maxdepth 1 -type f -name "*.bs" -delete
+find "$output_dir" -maxdepth 1 -type f \( -name "*.bs" -o -name "*.json" \) -delete
 copied_count=0
+json_count=0
+
+is_valid_blockscape_payload() {
+  local map_file="$1"
+  python3 - "$map_file" <<'PY'
+import json
+import sys
+from pathlib import Path
+
+
+def valid_map(value):
+    if not isinstance(value, dict):
+        return False
+    if not isinstance(value.get("id"), str) or not value["id"].strip():
+        return False
+    if not isinstance(value.get("title"), str) or not value["title"].strip():
+        return False
+    categories = value.get("categories")
+    if not isinstance(categories, list):
+        return False
+    for category in categories:
+        if not isinstance(category, dict):
+            return False
+        if not isinstance(category.get("id"), str) or not category["id"].strip():
+            return False
+        if not isinstance(category.get("title"), str) or not category["title"].strip():
+            return False
+        items = category.get("items")
+        if not isinstance(items, list):
+            return False
+        for item in items:
+            if not isinstance(item, dict):
+                return False
+            if not isinstance(item.get("id"), str) or not item["id"].strip():
+                return False
+            if not isinstance(item.get("name"), str) or not item["name"].strip():
+                return False
+    return True
+
+
+try:
+    payload = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
+except Exception:
+    raise SystemExit(1)
+
+if isinstance(payload, list):
+    raise SystemExit(0 if payload and all(valid_map(item) for item in payload) else 1)
+
+raise SystemExit(0 if valid_map(payload) else 1)
+PY
+}
 
 copy_map() {
   local map_file="$1"
   relative_path="${map_file#$source_repo/}"
   output_name="$(echo "$relative_path" | tr '/' '-' | sed 's/^-//')"
+  if ! is_valid_blockscape_payload "$map_file"; then
+    output_name="${output_name%.bs}.json"
+    : $((json_count++))
+  fi
   cp "$map_file" "$output_dir/$output_name"
   log "wrote $output_dir/$output_name"
   : $((copied_count++))
@@ -97,5 +152,8 @@ if [[ $copied_count -eq 0 ]]; then
   printf 'no-maps-copied\n'
 else
   log "copied $copied_count Blockscape maps"
+  if [[ $json_count -gt 0 ]]; then
+    log "renamed $json_count invalid Blockscape payloads to .json"
+  fi
   printf 'success\n'
 fi

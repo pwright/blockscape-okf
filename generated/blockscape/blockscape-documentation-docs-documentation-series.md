@@ -3,7 +3,7 @@ type: BlockscapeDocs
 title: Blockscape series
 id: blockscape-documentation-docs-documentation-series
 source_file: ../human/blockscape/documentation/docs/documentation/series.md
-generated_at: 2026-07-07T11:08:05Z
+generated_at: 2026-07-07T11:29:03Z
 generator: copy-blockscape-markdown.sh
 tags:
   - blockscape
@@ -29,7 +29,7 @@ A series can track a component over time, or to break down complexity into indiv
 Note that the Digital camera (red) remains a Capture device but it's importance decreases over time as new tech arrives on scene.
 Also note that because category names are repeated, there are *italic* maps at end of series that compare those categories over the series.
 
-```blockscape
+```json
 [
   {
     "id": "photography-1995-2002",

@@ -98,7 +98,10 @@ tags:
 
 DOC
 
-  cat "$md_file" >> "${output_dir}/${output_name}"
+  # Copied docs may contain instructional blockscape fences that are not valid
+  # Quartz-renderable maps. Preserve them as JSON examples so Quartz does not
+  # try to render or validate them as live Blockscape payloads.
+  sed -E 's/^```(blockscape|bs)([[:space:]].*)?$/```json/' "$md_file" >> "${output_dir}/${output_name}"
 
   log "wrote ${output_dir}/${output_name}"
   : $((copied_count++))

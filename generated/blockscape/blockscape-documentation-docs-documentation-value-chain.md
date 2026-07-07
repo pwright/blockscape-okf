@@ -3,7 +3,7 @@ type: BlockscapeDocs
 title: Visible value chain (y-axis)
 id: blockscape-documentation-docs-documentation-value-chain
 source_file: ../human/blockscape/documentation/docs/documentation/value-chain.md
-generated_at: 2026-07-07T11:08:05Z
+generated_at: 2026-07-07T11:29:03Z
 generator: copy-blockscape-markdown.sh
 tags:
   - blockscape

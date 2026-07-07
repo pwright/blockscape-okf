@@ -3,7 +3,7 @@ type: BlockscapeDocs
 title: Blockscape
 id: blockscape-documentation-docs-index
 source_file: ../human/blockscape/documentation/docs/index.md
-generated_at: 2026-07-07T11:08:05Z
+generated_at: 2026-07-07T11:29:03Z
 generator: copy-blockscape-markdown.sh
 tags:
   - blockscape
@@ -13,7 +13,7 @@ tags:
 
 This is a blockscape map:
 
-```blockscape
+```json
 {
   "id": "wardley-minimap",
   "title": "Wardley-Inspired Knowledge Schema",

@@ -11,26 +11,6 @@ mkdir_p() {
   log "ensured $dir"
 }
 
-ensure_blockscape_source_link() {
-  local link_path="sources/blockscape"
-  local target="../../blockscape"
-
-  if [[ -L "$link_path" ]]; then
-    log "kept existing $link_path symlink"
-    return
-  fi
-
-  if [[ -e "$link_path" ]]; then
-    log "left existing $link_path in place"
-    return
-  fi
-
-  if [[ -d "../blockscape" ]]; then
-    ln -s "$target" "$link_path"
-    log "linked $link_path -> $target"
-  fi
-}
-
 main() {
   mkdir_p _system
   mkdir_p human
@@ -50,7 +30,6 @@ main() {
   mkdir_p prompts
   mkdir_p sources
   mkdir_p context-packs
-  ensure_blockscape_source_link
 
   if [[ ! -f _system/AGENTS.md ]]; then
     cat > _system/AGENTS.md <<'DOC'

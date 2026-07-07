@@ -3,7 +3,7 @@ type: BlockscapeDocs
 title: Series example
 id: blockscape-documentation-docs-maps-series-example
 source_file: ../human/blockscape/documentation/docs/maps/series-example.md
-generated_at: 2026-07-07T11:08:05Z
+generated_at: 2026-07-07T11:29:03Z
 generator: copy-blockscape-markdown.sh
 tags:
   - blockscape
@@ -11,7 +11,7 @@ tags:
 
 # Series example
 
-```blockscape
+```json
 [
   {
     "id": "solar-system",

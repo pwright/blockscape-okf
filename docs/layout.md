@@ -22,7 +22,6 @@ blockscape-okf/
       _source.md
       ...snapshot of blockscape...
   sources/
-    blockscape -> ../../blockscape
     blockscape.md
   generated/
     blockscape/
@@ -35,7 +34,6 @@ blockscape-okf/
 
 Each `human/<repo-name>/` source tree is intentionally copied rather than symlinked. This makes the OKF repo portable and records exactly which upstream commit was used.
 
-`sources/blockscape` is intentionally a symlink to the sibling `../blockscape` checkout when that checkout exists. Use it for navigation and inspection; use `human/blockscape/` for snapshot-based generation.
 
 ## Test Scope
 

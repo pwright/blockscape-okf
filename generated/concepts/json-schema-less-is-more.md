@@ -1,6 +1,6 @@
 ---
 type: Concept
-title: JSON Schema: Less Is More
+title: "JSON Schema: Less Is More"
 id: blockscape-concept-json-schema-less-is-more
 status: generated
 reviewed: false

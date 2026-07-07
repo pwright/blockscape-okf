@@ -17,15 +17,17 @@ Use this checklist when adding a new Blockscape OKF concept.
 ```yaml
 ---
 type: Concept
-title: <title>
-id: blockscape-concept-<slug>
+title: "<title>"
+id: "blockscape-concept-<slug>"
 status: generated
 reviewed: false
-source_repo: https://github.com/pwright/blockscape.git
-source_commit: <commit>
+source_repo: "https://github.com/pwright/blockscape.git"
+source_commit: "<commit>"
 source_paths:
   - human/blockscape/<path>
 tags:
   - blockscape
 ---
 ```
+
+Quote YAML string values by default, especially values containing `:`, `#`, `{}`, `[]`, quotes, or leading/trailing whitespace.

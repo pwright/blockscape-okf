@@ -158,6 +158,8 @@ reviewed: false
 
 # Blockscape OKF
 
+Bring me your scattered docs, your mystery dependencies, your stale diagrams, your spreadsheets, and your AI summaries. Blockscape turns them into shared maps your team can edit, argue with, and reuse.
+
 This site publishes staged OKF wiki pages from the repository's generated and reviewed knowledge layers.
 
 ## Published areas

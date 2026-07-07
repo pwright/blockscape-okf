@@ -64,7 +64,14 @@ if [[ "$dry_run" == "true" ]]; then
 fi
 
 mkdir -p "$output_dir"
-find "$output_dir" -maxdepth 1 -type f \( -name "*.bs" -o -name "*.json" \) -delete
+find "$output_dir" -maxdepth 1 -type f \( \
+  -name "docs-*.bs" -o \
+  -name "docs-*.json" -o \
+  -name "blockscape-data-*.bs" -o \
+  -name "blockscape-data-*.json" -o \
+  -name "url.bs" -o \
+  -name "url.json" \
+\) -delete
 copied_count=0
 json_count=0
 

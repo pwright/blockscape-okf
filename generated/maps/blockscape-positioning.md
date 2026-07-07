@@ -22,15 +22,21 @@ Edit: [Blockscape](https://pwright.github.io/blockscape/?load=https://raw.github
       "title": "Core Thesis",
       "items": [
         {
+          "id": "why-use-blockscape",
+          "name": "Why Use Blockscape",
+          "deps": ["what-is-a-map", "visual-shortcut-to-understanding"],
+          "external": "https://pwright.github.io/blockscape-okf/generated/concepts/why-use-blockscape"
+        },
+        {
           "id": "shared-understanding-workspace",
           "name": "Shared Understanding Workspace",
-          "deps": ["from-summaries-to-system-models", "human-editable-map-workspace", "visual-shortcut-to-understanding", "what-is-a-map"],
+          "deps": ["why-use-blockscape", "from-summaries-to-system-models", "human-editable-map-workspace", "visual-shortcut-to-understanding"],
           "external": "https://pwright.github.io/blockscape-okf/generated/concepts/shared-understanding-workspace"
         },
         {
           "id": "durable-model",
           "name": "Durable Model",
-          "deps": ["human-editable-map-workspace", "testable-ai-generated-content", "ai-punchcards"]
+          "deps": ["json-schema-less-is-more", "human-editable-map-workspace", "testable-ai-generated-content", "ai-punchcards"]
         },
         {
           "id": "ai-drafts-humans-own",
@@ -44,22 +50,22 @@ Edit: [Blockscape](https://pwright.github.io/blockscape/?load=https://raw.github
       "title": "Supporting Frames",
       "items": [
         {
-          "id": "from-summaries-to-system-models",
-          "name": "From Summaries to System Models",
+          "id": "what-is-a-map",
+          "name": "What Is a Map",
           "deps": [],
-          "external": "https://pwright.github.io/blockscape-okf/generated/concepts/from-summaries-to-system-models"
+          "external": "https://pwright.github.io/blockscape-okf/generated/concepts/what-is-a-map"
         },
         {
           "id": "visual-shortcut-to-understanding",
           "name": "Visual Shortcut to Understanding",
-          "deps": [],
+          "deps": ["what-is-a-map"],
           "external": "https://pwright.github.io/blockscape-okf/generated/concepts/visual-shortcut-to-understanding"
         },
         {
-          "id": "what-is-a-map",
-          "name": "What Is a Map",
-          "deps": ["visual-shortcut-to-understanding"],
-          "external": "https://pwright.github.io/blockscape-okf/generated/concepts/what-is-a-map"
+          "id": "from-summaries-to-system-models",
+          "name": "From Summaries to System Models",
+          "deps": ["why-use-blockscape"],
+          "external": "https://pwright.github.io/blockscape-okf/generated/concepts/from-summaries-to-system-models"
         },
         {
           "id": "human-editable-map-workspace",
@@ -84,6 +90,12 @@ Edit: [Blockscape](https://pwright.github.io/blockscape/?load=https://raw.github
           "name": "2D Filter for the Firehose",
           "deps": ["visual-shortcut-to-understanding", "human-editable-map-workspace"],
           "external": "https://pwright.github.io/blockscape-okf/generated/concepts/two-dimensional-filter-for-firehose"
+        },
+        {
+          "id": "json-schema-less-is-more",
+          "name": "JSON Schema: Less Is More",
+          "deps": ["what-is-a-map", "durable-model"],
+          "external": "https://pwright.github.io/blockscape-okf/generated/concepts/json-schema-less-is-more"
         },
         {
           "id": "testable-ai-generated-content",
